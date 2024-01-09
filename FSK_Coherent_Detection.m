@@ -49,7 +49,11 @@ title('FSK Signal');
 xlabel('Time');
 ylabel('Amplitude');
 
-
+%introducing channel effects
+signal_noisy = awgn(signal, 5,'measured')
+figure
+plot (signal_noisy)
+title ('noisy signal')
 
     prompt = "choose your method , 1 (normal), 2(FFT) ,3 (PLL), 4 (Hilbert), 5 (Goertzel)? ";
     userInput = input(prompt)
